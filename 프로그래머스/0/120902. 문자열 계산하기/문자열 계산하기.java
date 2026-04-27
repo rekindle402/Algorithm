@@ -1,15 +1,20 @@
 class Solution {
     public int solution(String my_string) {
-        my_string = my_string.replace(" ", "");
-        my_string = my_string.replace("-", "+-");
-        
-        String[] nums = my_string.split("\\+");
-        int sum = 0;
-        for (String num : nums) {
-            if (!num.equals("")) {
-                sum += Integer.parseInt(num);
+        String[] tokens = my_string.split(" ");
+
+        int result = Integer.parseInt(tokens[0]);
+
+        for (int i = 1; i < tokens.length; i += 2) {
+            String operator = tokens[i];
+            int number = Integer.parseInt(tokens[i + 1]);
+
+            if ("+".equals(operator)) {
+                result += number;
+            } else {
+                result -= number;
             }
         }
-        return sum;
+
+        return result;
     }
 }
