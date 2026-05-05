@@ -6,11 +6,9 @@ class Solution {
         String requestPw = id_pw[1];
         
         for(String[] data : db){
-            if(requestId.equals(data[ID]) && requestPw.equals(data[PASSWORD])){
-                return "login";
-            } else if(requestId.equals(data[ID]) && !requestPw.equals(data[PASSWORD])){
-                return "wrong pw";
-            }
+            if(requestId.equals(data[ID])){
+                return requestPw.equals(data[PASSWORD]) ? "login" : "wrong pw";
+            } 
         }
         
         return "fail";
