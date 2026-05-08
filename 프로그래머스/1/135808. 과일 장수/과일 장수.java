@@ -3,7 +3,6 @@ import java.util.Arrays;
 class Solution {
     public int solution(int k, int m, int[] score) {
         int result = 0;
-        int box = score.length / m; 
         Arrays.sort(score);
         
         int count = 0;
