@@ -7,10 +7,10 @@ class Solution {
     private static final int DAMAGE = 1;
     
     public int solution(int[] bandage, int health, int[][] attacks) {
-        final int MAX_HEALTH = health;
+        final int MAX_HEALTH = health; // 최대 체력
         
         int attackIdx = 0;
-        int successCnt = 0;
+        int successCnt = 0; // 연속 성공 횟수
         int lastAttackTime = attacks[attacks.length-1][ATTACK_TIME];
         
         for(int sec = 1; sec <= lastAttackTime; sec++){
