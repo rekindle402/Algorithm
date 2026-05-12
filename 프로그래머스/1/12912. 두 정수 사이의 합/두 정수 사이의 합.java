@@ -1,13 +1,8 @@
 class Solution {
     public long solution(int a, int b) {
-        long answer = 0;
+        int count = Math.max(a,b) - Math.min(a,b) + 1;
+        double avg = (double)(a+b)/2;
         
-        int min = Math.min(a,b);
-        int max = Math.max(a,b);
-        
-        for(long i=min; i<=max; i++){
-            answer += i;
-        }
-        return answer;
+        return (long)(count * avg);
     }
 }
