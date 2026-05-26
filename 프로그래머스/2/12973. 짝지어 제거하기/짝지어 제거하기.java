@@ -10,15 +10,13 @@ class Solution {
             char c = s.charAt(i);
             if(stack.empty()){
                 stack.push(c);
+            } else if(stack.peek() == c){
+                stack.pop();
             } else {
-                if(stack.peek() == c){
-                    stack.pop();
-                } else {
-                    stack.push(c);
-                }
+                stack.push(c);
             }
         }
         
-        return stack.empty() ? 1 : 0;
+        return stack.isEmpty() ? 1 : 0;
     }
 }
